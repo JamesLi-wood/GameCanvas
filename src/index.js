@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./pages/App.js";
 import Login from "./pages/login.js";
 import GameInfo from "./pages/gameInfo.js";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
