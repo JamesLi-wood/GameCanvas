@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.game-card {
+  background-color: rgb(57, 57, 57);
+  border: 1px solid rgb(97, 97, 97);
+  border-radius: 20px;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.game-image {
+  cursor: pointer;
+  background-color: black;
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.game-title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}

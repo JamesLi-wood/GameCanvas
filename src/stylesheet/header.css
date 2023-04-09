@@ -1,0 +1,57 @@
+.header {
+  background-color: rgb(57, 57, 57);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.hamburger-button {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.home-button {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.middle-side input {
+  border: 1px solid black;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  padding: 5px 0px 5px 10px;
+  margin-right: 0px;
+  height: 20px;
+  outline: none;
+}
+
+.search-button {
+  border: 1px solid black;
+  cursor: pointer;
+  margin-left: -5px;
+  padding: 5px 5px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 32px;
+}
+
+.search-button img {
+  height: 12px;
+  width: 12px;
+}
+
+.login {
+  background-color: rebeccapurple;
+  border: 1px solid red;
+  cursor: pointer;
+}
