@@ -42,5 +42,6 @@ const auth = getAuth();
 
 // collection ref
 const colRef = collection(db, "Games");
+const userRef = collection(db, "Users");
 
-export { db, auth, colRef };
+export { db, auth, colRef, userRef};
