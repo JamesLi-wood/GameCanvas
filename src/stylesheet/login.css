@@ -40,6 +40,13 @@
   width: 100%;
 }
 
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
+
 .login-button {
   background-color: rgb(150, 150, 150);
   border: 1px solid black;
