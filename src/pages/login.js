@@ -1,15 +1,79 @@
 import "../stylesheet/login.css";
 import { Link } from "react-router-dom";
+import { userRef } from "../database/src/db";
+import { useState, useEffect } from "react";
+import {
+  onSnapshot,
+  where,
+  query,
+  getDocs,
+} from "../database/node_modules/firebase/firestore";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  // const [arr, setArr] = useState([]);
+  // useEffect(() => {
+  //   onSnapshot(userRef, (snapshot) => {
+  //     setArr(snapshot.docs.map((doc) => doc.data()));
+  //   });
+  // }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const q = query(
+      userRef,
+      where("username", "==", username),
+      where("password", "==", password)
+    );
+
+    getDocs(q).then((snapshot) => {
+      console.log(snapshot.docs);
+      if (snapshot.docs.length === 0) {
+        const highlight = document.getElementsByClassName("input");
+        for (let i = 0; i < highlight.length; i++) {
+          highlight[i].style["borderColor"] = "red";
+        }
+        setError(true);
+      } else {
+        console.log("not empty");
+      }
+    });
+  };
+
   return (
     <div className="login-body" id="body">
       <div className="login-card">
         <div className="logo">GameCanvas</div>
         <div className="name">Login</div>
-        <input type="text" className="input" placeholder="Username" />
-        <input type="text" className="input" placeholder="Password" />
-        <button className="login-button">LOGIN</button>
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="input"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            className="input"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          {error && (
+            <div className="error">
+              Username and Password do not match. <br></br>
+              Please try again.
+            </div>
+          )}
+          <button className="login-button" type="submit">
+            LOGIN
+          </button>
+        </form>
         <div className="signUp">
           Don't have an account?
           <Link to="/">Sign Up!</Link>
