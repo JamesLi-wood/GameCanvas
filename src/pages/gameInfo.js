@@ -38,7 +38,7 @@ const GameInfo = () => {
         <div className="description">{doc.Description}</div>
         <div className="strong">Genre:</div>
         {doc.genres.map((genre) => {
-          return <div className="genre">{genre}</div>;
+          return <div className="genre" key={genre}>{genre}</div>;
         })}
       </div>
     </div>
