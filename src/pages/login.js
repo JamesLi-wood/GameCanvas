@@ -1,24 +1,24 @@
 import "../stylesheet/login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userRef } from "../database/src/db";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
-  onSnapshot,
   where,
   query,
   getDocs,
 } from "../database/node_modules/firebase/firestore";
 
+const user = {
+  loggedIn: false,
+  username: "",
+  data: null,
+};
+
 const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  // const [arr, setArr] = useState([]);
-  // useEffect(() => {
-  //   onSnapshot(userRef, (snapshot) => {
-  //     setArr(snapshot.docs.map((doc) => doc.data()));
-  //   });
-  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +29,6 @@ const Login = () => {
     );
 
     getDocs(q).then((snapshot) => {
-      console.log(snapshot.docs);
       if (snapshot.docs.length === 0) {
         const highlight = document.getElementsByClassName("input");
         for (let i = 0; i < highlight.length; i++) {
@@ -37,7 +36,10 @@ const Login = () => {
         }
         setError(true);
       } else {
-        console.log("not empty");
+        user.loggedIn = true;
+        user.username = username;
+        user.data = q;
+        navigate("/");
       }
     });
   };
@@ -84,3 +86,5 @@ const Login = () => {
 };
 
 export default Login;
+
+export { user };
