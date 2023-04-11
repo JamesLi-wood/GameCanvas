@@ -1,10 +1,19 @@
 import "../stylesheet/header.css";
 import "../stylesheet/sidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { user } from "../pages/login";
 
 const Header = ({ expand }) => {
+  const navigate = useNavigate();
+  function signOut() {
+    user.loggedIn = false;
+    user.username = "";
+    user.data = null;
+    navigate("/");
+  }
+
   return (
-    <div>
+    <>
       <div className="header">
         <img
           className="hamburger-button"
@@ -24,9 +33,17 @@ const Header = ({ expand }) => {
             />
           </button>
         </div>
-        <Link to="/login">
-          <button className="login">Login</button>
-        </Link>
+        <div>
+          {user.loggedIn ? (
+            <div className="user" onClick={signOut}>
+              {user.username}
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="login">Login</button>
+            </Link>
+          )}
+        </div>
       </div>
 
       <nav id="sidebar" className="sidebar">
@@ -36,7 +53,7 @@ const Header = ({ expand }) => {
         <div className="sidebar-icon">test</div>
         <div className="sidebar-icon">test</div>
       </nav>
-    </div>
+    </>
   );
 };
 
