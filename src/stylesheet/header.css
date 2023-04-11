@@ -50,6 +50,13 @@
   width: 12px;
 }
 
+.user {
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 5px;
+}
+
 .login {
   background-color: rebeccapurple;
   border: 1px solid red;
