@@ -50,11 +50,29 @@
   width: 12px;
 }
 
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user {
   color: white;
   cursor: pointer;
   border: 1px solid white;
   padding: 5px;
+}
+
+.logOut {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  padding: 5px;
+  margin-top: 35px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .login {
