@@ -5,7 +5,7 @@ import Grid from "../components/grid.js";
 function expand() {
   let active = document.getElementById("sidebar").classList.toggle("active");
   let body = document.getElementById("body");
-  if (active === true) {
+  if (active) {
     body.style.padding = "100px 50px 0px 250px";
     body.style.transition = "0.4s";
   } else {
