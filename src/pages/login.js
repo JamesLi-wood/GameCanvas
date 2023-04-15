@@ -47,22 +47,22 @@ const Login = () => {
   return (
     <div className="login-body" id="body">
       <div className="login-card">
-        <div className="logo">GameCanvas</div>
+        <Link to="/">
+          <button className="logo">GameCanvas</button>
+        </Link>
         <div className="name">Login</div>
-        <form className="loginForm" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <input
-            type="text"
             className="input"
+            type="text"
             placeholder="Username"
-            value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
           <input
-            type="text"
             className="input"
+            type="text"
             placeholder="Password"
-            value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -78,7 +78,7 @@ const Login = () => {
         </form>
         <div className="signUp">
           Don't have an account?
-          <Link to="/">Sign Up!</Link>
+          <Link to="/SignUp">Sign Up!</Link>
         </div>
       </div>
     </div>
