@@ -17,15 +17,15 @@ const Grid = () => {
     <div className="grid">
       {arr.map((doc) => {
         return (
-          <div className="game-card" key={doc.Title}>
+          <div className="game-card" key={doc.title}>
             <Link to="/gameInfo" state={doc}>
               <img
-                src={require(`../images/${doc.ImgLink}`)}
+                src={require(`../images/${doc.imgLink}`)}
                 className="game-image"
                 alt={doc.Title}
               />
             </Link>
-            <div className="game-title">{doc.Title}</div>
+            <div className="game-title">{doc.title}</div>
           </div>
         );
       })}
