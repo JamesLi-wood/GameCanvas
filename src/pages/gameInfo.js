@@ -16,12 +16,12 @@ const GameInfo = () => {
       <div className="card">
         <img
           className="image"
-          src={require(`../images/${doc.ImgLink}`)}
+          src={require(`../images/${doc.imgLink}`)}
           alt={doc.Title}
         />
         <div className="information">
-          <div className="title">{doc.Title}</div>
-          <div className="data">Developer: {doc.Developer}</div>
+          <div className="title">{doc.title}</div>
+          <div className="data">Developer: {doc.developer}</div>
           <div className="data">Publisher: {doc.publisher}</div>
           <div className="data">Release Date: {doc.releaseDate}</div>
           <div className="data">Age rating: {doc.rating}</div>
@@ -35,7 +35,7 @@ const GameInfo = () => {
       </div>
       <div className="fill-card">
         <div className="strong">Description:</div>
-        <div className="description">{doc.Description}</div>
+        <div className="description">{doc.description}</div>
         <div className="strong">Genre:</div>
         {doc.genres.map((genre) => {
           return <div className="genre" key={genre}>{genre}</div>;
