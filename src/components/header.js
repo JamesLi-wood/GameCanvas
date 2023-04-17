@@ -2,6 +2,7 @@ import "../stylesheet/header.css";
 import "../stylesheet/sidebar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { user } from "../pages/login";
+import { useState } from "react";
 
 function activateLogOut() {
   const active = document.getElementById("user").classList.toggle("active");
@@ -18,12 +19,20 @@ function activateLogOut() {
 
 const Header = ({ expand }) => {
   const navigate = useNavigate();
+  const [input, setInput] = useState("null");
+
   function logOut() {
     user.loggedIn = false;
     user.username = "";
     user.data = null;
     navigate("/");
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/browse", { state: input });
+    navigate(0);
+  };
 
   return (
     <>
@@ -38,13 +47,20 @@ const Header = ({ expand }) => {
           <Link to="/">
             <button className="home-button">GameCanvas</button>
           </Link>
-          <input type="text" placeholder="Search" />
-          <button className="search-button">
-            <img
-              src={require("../images/magnifying-glass.png")}
-              alt="magnifying glass"
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setInput(e.target.value)}
+              required
             />
-          </button>
+            <button className="search-button">
+              <img
+                src={require("../images/magnifying-glass.png")}
+                alt="magnifying glass"
+              />
+            </button>
+          </form>
         </div>
         <div>
           {user.loggedIn ? (
@@ -65,11 +81,13 @@ const Header = ({ expand }) => {
       </div>
 
       <nav id="sidebar" className="sidebar">
-        <div className="sidebar-icon">Profile</div>
-        <div className="sidebar-icon">Browse</div>
-        <div className="sidebar-icon">test</div>
-        <div className="sidebar-icon">test</div>
-        <div className="sidebar-icon">test</div>
+        <button className="sidebar-icon">Profile</button>
+        <Link to="/browse">
+          <button className="sidebar-icon">Browse</button>
+        </Link>
+        <button className="sidebar-icon">Test</button>
+        <button className="sidebar-icon">Test</button>
+        <button className="sidebar-icon">Test</button>
       </nav>
     </>
   );
