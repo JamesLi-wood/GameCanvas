@@ -1,6 +1,7 @@
 import "../stylesheet/app.css";
 import Header from "../components/header.js";
 import Grid from "../components/grid.js";
+import { colRef } from "../database/src/db";
 
 function expand() {
   let active = document.getElementById("sidebar").classList.toggle("active");
@@ -17,8 +18,10 @@ function expand() {
 function App() {
   return (
     <div className="app-body" id="body">
-      <Header expand={expand} />
-      <Grid />
+      <div className="body">
+        <Header expand={expand} />
+        <Grid colRef={colRef} />
+      </div>
     </div>
   );
 }
