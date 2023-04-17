@@ -30,3 +30,8 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.no-result {
+  color: white;
+  font-size: 40px;
+}
