@@ -1,7 +1,7 @@
 .app-body {
   background-color: rgb(100, 100, 100);
   padding: 100px 50px 0px 50px;
-  height: 2000px;
+  overflow: auto;
   position: fixed;
   top: 0px;
   bottom: 0px;
