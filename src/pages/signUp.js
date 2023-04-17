@@ -46,8 +46,8 @@ const SignUp = () => {
         <Link to="/">
           <button className="logo">GameCanvas</button>
         </Link>
+        <div className="name">Enter your Username:</div>
         <form onSubmit={handleSubmit}>
-          <div className="name">Enter your Username:</div>
           <input
             className="input"
             type="text"
@@ -70,11 +70,11 @@ const SignUp = () => {
             </div>
           )}
           <button className="login-button">Sign Up</button>
-          <div className="signUp">
-            Already have an account?
-            <Link to="/Login">Log In!</Link>
-          </div>
         </form>
+        <div className="signUp">
+          Already have an account?
+          <Link to="/Login">Log In!</Link>
+        </div>
       </div>
     </div>
   );
