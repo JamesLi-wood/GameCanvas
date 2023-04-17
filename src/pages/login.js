@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-body" id="body">
+    <div className="login-body">
       <div className="login-card">
         <Link to="/">
           <button className="logo">GameCanvas</button>
@@ -78,7 +78,7 @@ const Login = () => {
         </form>
         <div className="signUp">
           Don't have an account?
-          <Link to="/SignUp">Sign Up!</Link>
+          <Link to="/signUp">Sign Up!</Link>
         </div>
       </div>
     </div>
