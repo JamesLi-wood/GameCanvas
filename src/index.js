@@ -4,6 +4,7 @@ import App from "./pages/App.js";
 import Login from "./pages/login.js";
 import GameInfo from "./pages/gameInfo.js";
 import SignUp from "./pages/signUp.js";
+import Browse from "./pages/browse.js";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 
 const router = createHashRouter([
@@ -20,8 +21,12 @@ const router = createHashRouter([
     element: <GameInfo />,
   },
   {
-    path: "SignUp",
+    path: "signUp",
     element: <SignUp />,
+  },
+  {
+    path: "browse",
+    element: <Browse />,
   },
 ]);
 
