@@ -5,6 +5,7 @@ import Login from "./pages/login.js";
 import GameInfo from "./pages/gameInfo.js";
 import SignUp from "./pages/signUp.js";
 import Browse from "./pages/browse.js";
+import Genre from "./pages/genre.js";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 
 const router = createHashRouter([
@@ -27,6 +28,10 @@ const router = createHashRouter([
   {
     path: "browse",
     element: <Browse />,
+  },
+  {
+    path: "genre",
+    element: <Genre />,
   },
 ]);
 
