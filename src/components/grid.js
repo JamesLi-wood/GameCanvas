@@ -32,7 +32,7 @@ const Grid = ({ colRef }) => {
           })}
         </div>
       ) : (
-        <div className="no-result">No Result</div>
+        <div className="result">No Result</div>
       )}
     </>
   );
