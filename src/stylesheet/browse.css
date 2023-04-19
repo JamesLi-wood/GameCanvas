@@ -1,5 +1,10 @@
-.result {
-  color: white;
+.genre-list {
+  position: relative;
+  top: -20px;
+  left: -55px;
+}
+
+.genre {
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
 }
