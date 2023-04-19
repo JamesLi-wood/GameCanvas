@@ -1,7 +1,8 @@
 import "../stylesheet/gameInfo.css";
 import "../stylesheet/browse.css";
 import Header from "../components/header";
-import { useLocation } from "react-router-dom";
+import Grid from "../components/grid";
+import { useLocation, Link } from "react-router-dom";
 import { colRef } from "../database/src/db";
 import {
   query,
@@ -9,7 +10,6 @@ import {
   startAt,
   endAt,
 } from "../database/node_modules/firebase/firestore";
-import Grid from "../components/grid";
 
 function expand() {
   document.getElementById("sidebar").classList.toggle("active");
@@ -36,7 +36,31 @@ const Browse = () => {
           <Grid colRef={q} />
         </div>
       ) : (
-        <div>Browse</div>
+        <>
+          <div className="genre-list">
+            <ul>
+              <div className="result">Genres</div>
+              <Link to="/genre" state="Action">
+                <div className="genre">Action</div>
+              </Link>
+              <Link to="/genre" state="RPG">
+                <div className="genre">RPG</div>
+              </Link>
+              <Link to="/genre" state="MOBA">
+                <div className="genre">MOBA</div>
+              </Link>
+              <Link to="/genre" state="FPS">
+                <div className="genre">FPS</div>
+              </Link>
+              <Link to="/genre" state="Tactical Shooter">
+                <div className="genre">Tactical Shooter</div>
+              </Link>
+              <Link to="/genre" state="Strategy">
+                <div className="genre">Strategy</div>
+              </Link>
+            </ul>
+          </div>
+        </>
       )}
     </div>
   );
