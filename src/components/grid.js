@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 
 const Grid = ({ colRef }) => {
   const [arr, setArr] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [result, setResult] = useState(false);
 
   useEffect(() => {
-    onSnapshot(colRef, (snapshot) => {
-      setArr(snapshot.docs.map((doc) => doc.data()));
-    });
+    setTimeout(() => {
+      onSnapshot(colRef, (snapshot) => {
+        setArr(snapshot.docs.map((doc) => doc.data()));
+        setResult(true);
+      });
+      setIsPending(false);
+    }, 500);
   }, []);
 
   return (
@@ -32,7 +38,10 @@ const Grid = ({ colRef }) => {
           })}
         </div>
       ) : (
-        <div className="result">No Result</div>
+        <div>
+          {isPending && <div>Loading...</div>}
+          {result && <div className="result">No Result</div>}
+        </div>
       )}
     </>
   );
