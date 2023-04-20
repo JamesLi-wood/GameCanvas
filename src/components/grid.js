@@ -39,7 +39,7 @@ const Grid = ({ colRef }) => {
         </div>
       ) : (
         <div>
-          {isPending && <div>Loading...</div>}
+          {isPending && <div className="loading">Loading...</div>}
           {result && <div className="result">No Result</div>}
         </div>
       )}
