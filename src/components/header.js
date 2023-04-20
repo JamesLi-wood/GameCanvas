@@ -1,7 +1,7 @@
 import "../stylesheet/header.css";
 import "../stylesheet/sidebar.css";
+import { setUser } from "../pages/App";
 import { Link, useNavigate } from "react-router-dom";
-import { user } from "../pages/login";
 import { useState } from "react";
 
 function activateLogOut() {
@@ -18,14 +18,13 @@ function activateLogOut() {
 }
 
 const Header = ({ expand }) => {
-  const navigate = useNavigate();
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const [input, setInput] = useState("null");
+  const navigate = useNavigate();
 
   function logOut() {
-    user.loggedIn = false;
-    user.username = "";
-    user.data = null;
-    navigate("/");
+    setUser(false, "", null);
+    navigate("/home");
   }
 
   const handleSubmit = (e) => {
@@ -44,7 +43,7 @@ const Header = ({ expand }) => {
           onClick={expand}
         />
         <div className="middle-side">
-          <Link to="/">
+          <Link to="/home">
             <button className="home-button">GameCanvas</button>
           </Link>
           <form onSubmit={handleSubmit}>
@@ -81,7 +80,9 @@ const Header = ({ expand }) => {
       </div>
 
       <nav id="sidebar" className="sidebar">
-        <button className="sidebar-icon">Profile</button>
+        <Link to="/profile">
+          <button className="sidebar-icon">Profile</button>
+        </Link>
         <Link to="/browse">
           <button className="sidebar-icon">Browse</button>
         </Link>
