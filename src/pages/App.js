@@ -1,29 +1,26 @@
-import "../stylesheet/app.css";
-import Header from "../components/header.js";
-import Grid from "../components/grid.js";
-import { colRef } from "../database/src/db";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-function expand() {
-  let active = document.getElementById("sidebar").classList.toggle("active");
-  let body = document.getElementById("body");
-  if (active) {
-    body.style.padding = "100px 50px 0px 250px";
-    body.style.transition = "0.4s";
-  } else {
-    body.style.padding = "100px 50px 0px 50px";
-    body.style.transition = "0.4s";
-  }
-}
-
-function App() {
-  return (
-    <div className="app-body" id="body">
-      <div className="body">
-        <Header expand={expand} />
-        <Grid colRef={colRef} />
-      </div>
-    </div>
+function setUser(loggedIn, username, data) {
+  sessionStorage.setItem(
+    "user",
+    JSON.stringify({
+      loggedIn: loggedIn,
+      username: username,
+      data: data,
+    })
   );
 }
 
+function App() {
+  const navigate = useNavigate();
+  setUser(false, "", null);
+
+  useEffect(() => {
+    navigate("/home");
+  }, []);
+}
+
 export default App;
+
+export { setUser };
