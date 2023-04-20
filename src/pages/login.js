@@ -1,24 +1,19 @@
 import "../stylesheet/login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { setUser } from "./App";
 import { userRef } from "../database/src/db";
-import { useState } from "react";
 import {
   where,
   query,
   getDocs,
 } from "../database/node_modules/firebase/firestore";
-
-const user = {
-  loggedIn: false,
-  username: "",
-  data: null,
-};
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,10 +31,8 @@ const Login = () => {
         }
         setError(true);
       } else {
-        user.loggedIn = true;
-        user.username = username;
-        user.data = q;
-        navigate("/");
+        setUser(true, username, q);
+        navigate("/home");
       }
     });
   };
@@ -47,7 +40,7 @@ const Login = () => {
   return (
     <div className="login-body">
       <div className="login-card">
-        <Link to="/">
+        <Link to="/home">
           <button className="logo">GameCanvas</button>
         </Link>
         <div className="name">Login</div>
@@ -86,5 +79,3 @@ const Login = () => {
 };
 
 export default Login;
-
-export { user };
