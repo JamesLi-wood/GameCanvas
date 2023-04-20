@@ -6,6 +6,8 @@ import GameInfo from "./pages/gameInfo.js";
 import SignUp from "./pages/signUp.js";
 import Browse from "./pages/browse.js";
 import Genre from "./pages/genre.js";
+import Profile from "./pages/profile.js";
+import Home from "./pages/home.js";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 
 const router = createHashRouter([
@@ -32,6 +34,14 @@ const router = createHashRouter([
   {
     path: "genre",
     element: <Genre />,
+  },
+  {
+    path: "profile",
+    element: <Profile />,
+  },
+  {
+    path: "home",
+    element: <Home />,
   },
 ]);
 
