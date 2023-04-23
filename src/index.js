@@ -8,6 +8,7 @@ import Browse from "./pages/browse.js";
 import Genre from "./pages/genre.js";
 import Profile from "./pages/profile.js";
 import Home from "./pages/home.js";
+import ProfileList from "./pages/profileList.js";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 
 const router = createHashRouter([
@@ -42,6 +43,10 @@ const router = createHashRouter([
   {
     path: "home",
     element: <Home />,
+  },
+  {
+    path: "profileList",
+    element: <ProfileList />,
   },
 ]);
 
