@@ -76,9 +76,12 @@
 }
 
 .login {
-  background-color: rebeccapurple;
-  border: 1px solid red;
+  background-color: rgb(57, 57, 57);
+  border: 1px solid white;
+  color: white;
   cursor: pointer;
+  height: 30px;
+  width: 60px;
 }
 
 form {
