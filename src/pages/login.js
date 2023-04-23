@@ -31,7 +31,7 @@ const Login = () => {
         }
         setError(true);
       } else {
-        setUser(true, username, q);
+        setUser(true, username, snapshot.docs[0].id);
         navigate("/home");
       }
     });
