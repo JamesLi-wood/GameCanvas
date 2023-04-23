@@ -31,9 +31,11 @@ const SignUp = () => {
         addDoc(userRef, {
           username: username,
           password: password,
+          likes: [],
+        }).then((user) => {
+          setUser(true, username, user.id);
+          navigate("/home");
         });
-        setUser(true, username, q);
-        navigate("/home");
       }
     });
   };
