@@ -1,0 +1,48 @@
+.profile-body {
+  background-color: rgb(100, 100, 100);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.profile-card {
+  border: 1px solid red;
+  width: 500px;
+  position: fixed;
+  top: 100px;
+  justify-content: center;
+  padding: 20px 0px 20px 25px;
+}
+
+.username {
+  color: white;
+  font-size: 45px;
+}
+
+.profile-text {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.profile-button {
+  cursor: pointer;
+  height: 40px;
+  border: 1px solid red;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(100, 100, 100);
+
+  margin-right: 10px;
+}
+
+.test {
+  border: 1px solid blue;
+  position: fixed;
+  top: 390px;
+}
