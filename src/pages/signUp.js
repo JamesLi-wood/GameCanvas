@@ -21,13 +21,7 @@ const SignUp = () => {
     const q = query(userRef, where("username", "==", username));
 
     getDocs(q).then((snapshot) => {
-      if (snapshot.docs.length === 1) {
-        const highlight = document.getElementsByClassName("input");
-        for (let i = 0; i < highlight.length; i++) {
-          highlight[i].style["borderColor"] = "red";
-        }
-        setError(true);
-      } else {
+      if (snapshot.empty) {
         addDoc(userRef, {
           username: username,
           password: password,
@@ -36,6 +30,12 @@ const SignUp = () => {
           setUser(true, username, user.id);
           navigate("/home");
         });
+      } else {
+        const highlight = document.getElementsByClassName("input");
+        for (let i = 0; i < highlight.length; i++) {
+          highlight[i].style["borderColor"] = "red";
+        }
+        setError(true);
       }
     });
   };

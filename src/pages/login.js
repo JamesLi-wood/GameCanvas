@@ -24,7 +24,7 @@ const Login = () => {
     );
 
     getDocs(q).then((snapshot) => {
-      if (snapshot.docs.length === 0) {
+      if (snapshot.empty) {
         const highlight = document.getElementsByClassName("input");
         for (let i = 0; i < highlight.length; i++) {
           highlight[i].style["borderColor"] = "red";
