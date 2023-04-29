@@ -10,7 +10,7 @@ function expand() {
 
 const Profile = () => {
   const [option, setOption] = useState();
-  const [active, setActive] = useState();
+  const [active, setActive] = useState(false);
   const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
 
@@ -20,12 +20,12 @@ const Profile = () => {
     }
   });
 
-  const handleSubmit = (e, test) => {
+  const handleSubmit = (e, option) => {
     e.preventDefault();
     const active = document.getElementById("change").classList.toggle("active");
 
     if (active) {
-      setOption(test);
+      setOption(option);
       setActive(true);
     } else {
       setActive(false);
@@ -56,7 +56,12 @@ const Profile = () => {
         >
           Change password
         </button>
-        <button className="profile-button">Delete account</button>
+        <button
+          className="profile-button"
+          onClick={(event) => handleSubmit(event, "delete")}
+        >
+          Delete account
+        </button>
         {active && <ChangeCreds option={option} user={user.data} />}
       </div>
     </div>
