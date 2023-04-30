@@ -36,15 +36,15 @@ const ChangeCreds = ({ option, user }) => {
       const q = query(userRef, where("username", "==", change));
 
       getDocs(q).then((snapshot) => {
-        if (snapshot.docs.length > 0) {
-          setError(true);
-        } else {
+        if (snapshot.empty) {
           updateDoc(docRef, {
             username: change,
           }).then(() => {
             setUser(true, change, docRef.id);
             navigate(0);
           });
+        } else {
+          setError(true);
         }
       });
     } else {
