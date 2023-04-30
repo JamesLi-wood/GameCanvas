@@ -10,6 +10,7 @@
 }
 
 .card {
+  border: 1px solid red;
   display: grid;
   grid-template-columns: 300px 750px;
   width: 1050px;
@@ -23,6 +24,7 @@
 }
 
 .information {
+  position: relative;
   margin-left: 20px;
 }
 
@@ -63,4 +65,22 @@
   padding: 10px 15px 10px 15px;
   margin-right: 7px;
   margin-bottom: 7px;
+}
+
+.star-unchecked {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  color: white;
+  font-size: 30px;
+}
+
+.star-checked {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  color: yellow;
+  font-size: 30px;
 }
