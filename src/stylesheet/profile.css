@@ -46,3 +46,19 @@
   position: fixed;
   top: 390px;
 }
+
+.favorite-card {
+  border: 1px solid red;
+  width: 500px;
+  position: fixed;
+  top: 100px;
+  justify-content: center;
+  padding: 0px 0px 0px 0px;
+}
+
+.favorite {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
