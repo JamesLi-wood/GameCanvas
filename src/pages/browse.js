@@ -58,6 +58,9 @@ const Browse = () => {
               <Link to="/genre" state="Strategy">
                 <div className="genre">Strategy</div>
               </Link>
+              <Link to="/genre" state="Adventure">
+                <div className="genre">Adventure</div>
+              </Link>
             </ul>
           </div>
         </>
