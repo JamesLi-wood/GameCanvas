@@ -29,7 +29,7 @@ const firebaseConfig = {
   projectId: "gamecanv",
   storageBucket: "gamecanv.appspot.com",
   messagingSenderId: "556546439209",
-  appId: "1:556546439209:web:3f9c9797d0d52da9558438"
+  appId: "1:556546439209:web:3f9c9797d0d52da9558438",
 };
 
 // init firebase app
@@ -43,4 +43,4 @@ const auth = getAuth();
 const colRef = collection(db, "Games");
 const userRef = collection(db, "Users");
 
-export { db, auth, colRef, userRef};
+export { db, auth, colRef, userRef };
