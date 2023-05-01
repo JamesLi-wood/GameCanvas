@@ -1,20 +1,17 @@
 {
   "files": {
-    "main.css": "/GameCanvas/static/css/main.8ce5060e.css",
-    "main.js": "/GameCanvas/static/js/main.6646ce92.js",
+    "main.css": "/GameCanvas/static/css/main.b9fcf13d.css",
+    "main.js": "/GameCanvas/static/js/main.24da0b6d.js",
     "static/media/DBZ_Kakarot.png": "/GameCanvas/static/media/DBZ_Kakarot.0724f24327d4df81d6f3.png",
     "static/media/leagueOfLegends.jpg": "/GameCanvas/static/media/leagueOfLegends.e67572fac6f59a33613f.jpg",
-    "static/media/cat2.jpg": "/GameCanvas/static/media/cat2.a4d4a45d547afc4273e5.jpg",
-    "static/media/cat.jpg": "/GameCanvas/static/media/cat.c8543b8a3e50db731d3d.jpg",
-    "static/media/dog.jpg": "/GameCanvas/static/media/dog.51af1c1fc603af7d33db.jpg",
+    "static/media/GTA5.jpg": "/GameCanvas/static/media/GTA5.49d4d9d8784d4e57d541.jpg",
     "static/media/magnifying-glass.png": "/GameCanvas/static/media/magnifying-glass.d192b5908e51e25242d9.png",
-    "static/media/Hamburger_icon.svg.png": "/GameCanvas/static/media/Hamburger_icon.svg.a633845bca57a0d1a648.png",
     "index.html": "/GameCanvas/index.html",
-    "main.8ce5060e.css.map": "/GameCanvas/static/css/main.8ce5060e.css.map",
-    "main.6646ce92.js.map": "/GameCanvas/static/js/main.6646ce92.js.map"
+    "main.b9fcf13d.css.map": "/GameCanvas/static/css/main.b9fcf13d.css.map",
+    "main.24da0b6d.js.map": "/GameCanvas/static/js/main.24da0b6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ce5060e.css",
-    "static/js/main.6646ce92.js"
+    "static/css/main.b9fcf13d.css",
+    "static/js/main.24da0b6d.js"
   ]
 }
