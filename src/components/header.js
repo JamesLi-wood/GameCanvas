@@ -17,7 +17,7 @@ function activateLogOut() {
   }
 }
 
-const Header = ({ expand }) => {
+const Header = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [input, setInput] = useState("null");
   const navigate = useNavigate();
@@ -36,16 +36,18 @@ const Header = ({ expand }) => {
   return (
     <>
       <div className="header">
-        <img
-          className="hamburger-button"
-          src={require("../images/hamburger.png")}
-          alt="hamburger button"
-          onClick={expand}
-        />
-        <div className="middle-side">
-          <Link to="/home">
-            <button className="home-button">GameCanvas</button>
+        <div className="left-side">
+          <Link to="/profile">
+            <button className="button">Profile</button>
           </Link>
+          <Link to="/browse">
+            <button className="button">Browse</button>
+          </Link>
+          <Link to="/home">
+            <button className="button">Home</button>
+          </Link>
+        </div>
+        <div className="middle-side">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -53,7 +55,7 @@ const Header = ({ expand }) => {
               onChange={(e) => setInput(e.target.value)}
               required
             />
-            <button className="search-button">
+            <button>
               <img
                 src={require("../images/magnifying-glass.png")}
                 alt="magnifying glass"
@@ -61,35 +63,23 @@ const Header = ({ expand }) => {
             </button>
           </form>
         </div>
-        <div>
+        <div className="right-side">
           {user.loggedIn ? (
-            <div className="user-container">
-              <div className="user" id="user" onClick={activateLogOut}>
+            <div>
+              <button className="button" id="user" onClick={activateLogOut}>
                 {user.username}
-              </div>
-              <div className="logOut" id="logOut" onClick={logOut}>
+              </button>
+              <button className="logOut" id="logOut" onClick={logOut}>
                 Log out
-              </div>
+              </button>
             </div>
           ) : (
             <Link to="/login">
-              <button className="login">Login</button>
+              <button className="button">Login</button>
             </Link>
           )}
         </div>
       </div>
-
-      <nav id="sidebar" className="sidebar">
-        <Link to="/profile">
-          <button className="sidebar-icon">Profile</button>
-        </Link>
-        <Link to="/browse">
-          <button className="sidebar-icon">Browse</button>
-        </Link>
-        <button className="sidebar-icon">Test</button>
-        <button className="sidebar-icon">Test</button>
-        <button className="sidebar-icon">Test</button>
-      </nav>
     </>
   );
 };
