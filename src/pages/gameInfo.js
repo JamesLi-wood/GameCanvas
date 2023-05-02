@@ -9,10 +9,6 @@ import {
 import { db } from "../database/src/db";
 import Header from "../components/header.js";
 
-function expand() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-
 const GameInfo = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -54,7 +50,7 @@ const GameInfo = () => {
 
   return (
     <div className="info-body" id="body">
-      <Header expand={expand} />
+      <Header/>
       <div className="card">
         <img
           className="image"

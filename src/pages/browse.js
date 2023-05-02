@@ -11,10 +11,6 @@ import {
   endAt,
 } from "../database/node_modules/firebase/firestore";
 
-function expand() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-
 const Browse = () => {
   const location = useLocation();
   const game = location.state;
@@ -27,9 +23,8 @@ const Browse = () => {
   );
 
   return (
-    // consider using app-body for className
     <div className="info-body">
-      <Header expand={expand} />
+      <Header/>
       {game ? (
         <div>
           <div className="result">Search Results for "{game}"</div>

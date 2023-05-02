@@ -4,10 +4,6 @@ import { query, where } from "../database/node_modules/firebase/firestore";
 import { colRef } from "../database/src/db";
 import Grid from "../components/grid";
 
-function expand() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-
 const Genre = () => {
   const location = useLocation();
   const genre = location.state;
@@ -15,7 +11,7 @@ const Genre = () => {
 
   return (
     <div className="info-body">
-      <Header expand={expand} />
+      <Header />
       <div className="result">{genre}</div>
       <Grid colRef={q} />
     </div>

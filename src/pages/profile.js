@@ -4,10 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ChangeCreds from "../components/changeCreds";
 
-function expand() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-
 const Profile = () => {
   const [option, setOption] = useState();
   const [active, setActive] = useState(false);
@@ -34,7 +30,7 @@ const Profile = () => {
 
   return (
     <div className="profile-body" id="body">
-      <Header expand={expand} />
+      <Header />
       <div className="profile-card">
         <div className="username">{user.username}</div>
         <div className="profile-text">Activity</div>
