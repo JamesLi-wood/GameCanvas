@@ -11,18 +11,24 @@
   padding: 10px 20px 10px 20px;
 }
 
-.hamburger-button {
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
+.left-side {
+  margin-left: 33px;
+  min-width: 250px;
+  width: 20%;
 }
 
-.home-button {
-  background-color: white;
-  border: 1px solid black;
+.button {
+  background-color: rgb(57, 57, 57);
+  border: 1px solid white;
+  color: white;
   cursor: pointer;
-  padding: 5px;
+  height: 30px;
   margin-right: 20px;
+}
+
+.middle-side {
+  min-width: 202px;
+  width: 20%;
 }
 
 .middle-side input {
@@ -35,7 +41,7 @@
   outline: none;
 }
 
-.search-button {
+.middle-side button {
   border: 1px solid black;
   cursor: pointer;
   margin-left: -5px;
@@ -45,22 +51,14 @@
   height: 32px;
 }
 
-.search-button img {
+.middle-side img {
   height: 12px;
   width: 12px;
 }
 
-.user-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.user {
-  color: white;
-  cursor: pointer;
-  border: 1px solid white;
-  padding: 5px;
+.right-side {
+  min-width: 200px;
+  width: 20%;
 }
 
 .logOut {
@@ -68,22 +66,18 @@
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  position: fixed;
-  padding: 5px;
-  margin-top: 35px;
+  display: inline-block;
+  height: 30px;
   opacity: 0;
   pointer-events: none;
 }
 
-.login {
-  background-color: rgb(57, 57, 57);
+.logOut:active {
+  background-color: black;
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  height: 30px;
-  width: 60px;
-}
-
-form {
   display: inline-block;
+  height: 30px;
+  opacity: 1;
 }
