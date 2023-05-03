@@ -1,5 +1,4 @@
 import "../stylesheet/header.css";
-import "../stylesheet/sidebar.css";
 import { setUser } from "../pages/App";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
