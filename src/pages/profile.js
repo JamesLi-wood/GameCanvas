@@ -1,4 +1,5 @@
 import "../stylesheet/profile.css";
+import "../stylesheet/home.css";
 import Header from "../components/header";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -29,7 +30,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile-body" id="body">
+    <div className="center-body">
       <Header />
       <div className="profile-card">
         <div className="username">{user.username}</div>

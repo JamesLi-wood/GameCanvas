@@ -1,4 +1,5 @@
 import "../stylesheet/gameInfo.css";
+import "../stylesheet/home.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -49,56 +50,58 @@ const GameInfo = () => {
   }
 
   return (
-    <div className="info-body" id="body">
-      <Header/>
-      <div className="card">
-        <img
-          className="image"
-          src={require(`../images/${game.imgLink}`)}
-          alt={game.Title}
-        />
-        <div className="information">
-          <div className="title">{game.title}</div>
-          {isFavorite ? (
-            <div
-              id="star"
-              className="star-checked"
-              onClick={(event) => handleClick(event, "uncheck")}
-            >
-              &#9733;
+    <div className="center-body">
+      <Header />
+      <div>
+        <div className="info-card">
+          <img
+            className="image"
+            src={require(`../images/${game.imgLink}`)}
+            alt={game.Title}
+          />
+          <div className="information">
+            <div className="title">{game.title}</div>
+            {isFavorite ? (
+              <div
+                id="star"
+                className="star-checked"
+                onClick={(event) => handleClick(event, "uncheck")}
+              >
+                &#9733;
+              </div>
+            ) : (
+              <div
+                id="star"
+                className="star-unchecked"
+                onClick={(event) => handleClick(event, "check")}
+              >
+                &#9734;
+              </div>
+            )}
+            <div className="data">Developer: {game.developer}</div>
+            <div className="data">Publisher: {game.publisher}</div>
+            <div className="data">Release Date: {game.releaseDate}</div>
+            <div className="data">Age rating: {game.rating}</div>
+            <div className="data">
+              Platforms:{" "}
+              {game.platforms.map((platform) => {
+                return `${platform}, `;
+              })}
             </div>
-          ) : (
-            <div
-              id="star"
-              className="star-unchecked"
-              onClick={(event) => handleClick(event, "check")}
-            >
-              &#9734;
-            </div>
-          )}
-          <div className="data">Developer: {game.developer}</div>
-          <div className="data">Publisher: {game.publisher}</div>
-          <div className="data">Release Date: {game.releaseDate}</div>
-          <div className="data">Age rating: {game.rating}</div>
-          <div className="data">
-            Platforms:{" "}
-            {game.platforms.map((platform) => {
-              return `${platform}, `;
-            })}
           </div>
         </div>
-      </div>
-      <div className="fill-card">
-        <div className="strong">Description:</div>
-        <div className="description">{game.description}</div>
-        <div className="strong">Genre:</div>
-        {game.genres.map((genre) => {
-          return (
-            <div className="genre-box" key={genre}>
-              {genre}
-            </div>
-          );
-        })}
+        <div className="fill-card">
+          <div className="strong">Description:</div>
+          <div className="description">{game.description}</div>
+          <div className="strong">Genre:</div>
+          {game.genres.map((genre) => {
+            return (
+              <div className="genre-box" key={genre}>
+                {genre}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

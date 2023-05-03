@@ -1,4 +1,4 @@
-import "../stylesheet/gameInfo.css";
+import "../stylesheet/home.css";
 import "../stylesheet/browse.css";
 import Header from "../components/header";
 import Grid from "../components/grid";
@@ -23,17 +23,20 @@ const Browse = () => {
   );
 
   return (
-    <div className="info-body">
-      <Header/>
+    <>
       {game ? (
-        <div>
-          <div className="result">Search Results for "{game}"</div>
-          <Grid colRef={q} />
+        <div className="center-body">
+          <Header />
+          <div className="home-card">
+            <div className="result">Search Results for "{game}"</div>
+            <Grid colRef={q} />
+          </div>
         </div>
       ) : (
-        <>
-          <div className="genre-list">
-            <div className="result">Genres</div>
+        <div className="center-body">
+          <Header />
+          <div className="home-card">
+            <div className="genre-title">Genres</div>
             <ul>
               <Link to="/genre" state="Action">
                 <div className="genre">Action</div>
@@ -58,9 +61,9 @@ const Browse = () => {
               </Link>
             </ul>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

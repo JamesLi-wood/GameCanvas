@@ -1,3 +1,5 @@
+import "../stylesheet/home.css";
+import "../stylesheet/browse.css";
 import Header from "../components/header";
 import { useLocation } from "react-router-dom";
 import { query, where } from "../database/node_modules/firebase/firestore";
@@ -10,10 +12,12 @@ const Genre = () => {
   const q = query(colRef, where("genres", "array-contains", genre));
 
   return (
-    <div className="info-body">
+    <div className="center-body">
       <Header />
-      <div className="result">{genre}</div>
-      <Grid colRef={q} />
+      <div className="home-card">
+        <div className="genre-title">{genre}</div>
+        <Grid colRef={q} />
+      </div>
     </div>
   );
 };

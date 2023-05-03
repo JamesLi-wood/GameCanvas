@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/header";
 import "../stylesheet/profile.css";
 import "../stylesheet/grid.css";
+import "../stylesheet/home.css";
 
 const ProfileList = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -31,30 +32,28 @@ const ProfileList = () => {
   const likes = arr.filter((game) => game != undefined);
 
   return (
-    <>
-      <div className="profile-body">
-        <Header />
-        <div className="favorite-card">
-          <div className="favorite">Your Favorites</div>
-          <div className="grid">
-            {likes.map((doc) => {
-              return (
-                <div className="game-card" key={doc.title}>
-                  <Link to="/gameInfo" state={doc}>
-                    <img
-                      src={require(`../images/${doc.imgLink}`)}
-                      className="game-image"
-                      alt={doc.Title}
-                    />
-                  </Link>
-                  <div className="game-title">{doc.title}</div>
-                </div>
-              );
-            })}
-          </div>
+    <div className="center-body">
+      <Header />
+      <div className="home-card">
+        <div className="favorite">Your Favorites</div>
+        <div className="grid">
+          {likes.map((doc) => {
+            return (
+              <div className="game-card" key={doc.title}>
+                <Link to="/gameInfo" state={doc}>
+                  <img
+                    src={require(`../images/${doc.imgLink}`)}
+                    className="game-image"
+                    alt={doc.Title}
+                  />
+                </Link>
+                <div className="game-title">{doc.title}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
