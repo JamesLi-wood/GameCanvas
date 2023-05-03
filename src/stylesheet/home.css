@@ -1,0 +1,28 @@
+.center-body {
+  background-color: rgb(100, 100, 100);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: auto;
+}
+
+/* currently unused, consider removing */
+.default-body {
+  background-color: rgb(100, 100, 100);
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.home-card {
+  position: fixed;
+  top: 100px;
+  width: 90%;
+}

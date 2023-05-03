@@ -1,18 +1,8 @@
-.info-body {
-  background-color: rgb(100, 100, 100);
-  overflow: auto;
-  padding: 100px 50px 0px 300px;
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
-
-.card {
+.info-card {
+  margin-top: 100px;
+  width: 1050px;
   display: grid;
   grid-template-columns: 300px 750px;
-  width: 1050px;
 }
 
 .image {
