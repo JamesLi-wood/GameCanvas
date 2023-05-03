@@ -65,26 +65,31 @@ const ChangeCreds = ({ option, user }) => {
   return (
     <>
       {modify && (
-        <div className="change-details">
-          <div>Please enter new {option}:</div>
+        <div className="cred-card">
+          <div className="cred-title">Please enter new {option}:</div>
           <form onSubmit={handleSubmit}>
             <input
-              className="input"
               type="text"
-              placeholder="Username"
+              placeholder={option}
               onChange={(e) => setChange(e.target.value)}
               required
             />
-            <button>Submit</button>
+            <button className="cred-submit">Submit</button>
           </form>
-          {error && <div className="error">Username is already taken.</div>}
-          {success && <div>Password successfully changed!</div>}
+          {error && (
+            <div className="user-error">Username is already taken.</div>
+          )}
+          {success && (
+            <div className="user-success">Password successfully changed!</div>
+          )}
         </div>
       )}
       {erase && (
-        <div className="change-details">
-          <div>Are you sure you want to delete?</div>
-          <button onClick={deleteAccount}>Delete</button>
+        <div className="cred-card">
+          <div className="cred-title">Are you sure you want to delete?</div>
+          <button className="delete" onClick={deleteAccount}>
+            Delete
+          </button>
         </div>
       )}
     </>
