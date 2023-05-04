@@ -25,11 +25,11 @@ const Grid = ({ colRef }) => {
           {arr.map((doc) => {
             return (
               <div className="game-card" key={doc.title}>
-                <Link to="/gameInfo" state={doc}>
+                <Link to="/gameInfo" state={doc.title}>
                   <img
                     src={require(`../images/${doc.imgLink}`)}
                     className="game-image"
-                    alt={doc.Title}
+                    alt={doc.title}
                   />
                 </Link>
                 <div className="game-title">{doc.title}</div>
