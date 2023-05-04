@@ -56,20 +56,29 @@
   margin-bottom: 7px;
 }
 
-.star-unchecked {
-  cursor: pointer;
+.star-container {
   position: absolute;
   top: 3px;
   right: 12px;
+}
+
+.favorite-count {
+  color: yellow;
+  display: inline-block; 
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.star-unchecked {
+  cursor: pointer;
   color: white;
+  display: inline-block;
   font-size: 30px;
 }
 
 .star-checked {
   cursor: pointer;
-  position: absolute;
-  top: 3px;
-  right: 12px;
   color: yellow;
+  display: inline-block;
   font-size: 30px;
 }
