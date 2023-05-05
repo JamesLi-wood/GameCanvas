@@ -1,5 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "./pages/App.js";
 import Login from "./pages/login.js";
 import GameInfo from "./pages/gameInfo.js";
@@ -10,6 +8,8 @@ import Profile from "./pages/profile.js";
 import Home from "./pages/home.js";
 import ProfileList from "./pages/profileList.js";
 import { RouterProvider, createHashRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import React from "react";
 
 const router = createHashRouter([
   {
