@@ -1,7 +1,5 @@
 import "../stylesheet/gameInfo.css";
 import "../stylesheet/home.css";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import {
   getDoc,
   updateDoc,
@@ -9,6 +7,8 @@ import {
 } from "../database/node_modules/firebase/firestore";
 import { db } from "../database/src/db";
 import Header from "../components/header.js";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const GameInfo = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -101,7 +101,6 @@ const GameInfo = () => {
                   )}
                 </div>
               </div>
-
               <div className="data">Developer: {game.developer}</div>
               <div className="data">Publisher: {game.publisher}</div>
               <div className="data">Release Date: {game.releaseDate}</div>
@@ -120,9 +119,11 @@ const GameInfo = () => {
             <div className="strong">Genre:</div>
             {game.genres.map((genre) => {
               return (
-                <div className="genre-box" key={genre}>
-                  {genre}
-                </div>
+                <Link to="/genre" state={genre}>
+                  <button className="genre-box" key={genre}>
+                    {genre}
+                  </button>
+                </Link>
               );
             })}
           </div>
