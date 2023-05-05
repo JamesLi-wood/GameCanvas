@@ -1,15 +1,15 @@
 import "../stylesheet/home.css";
 import "../stylesheet/browse.css";
-import Header from "../components/header";
-import Grid from "../components/grid";
-import { useLocation, Link } from "react-router-dom";
-import { colRef } from "../database/src/db";
 import {
   query,
   orderBy,
   startAt,
   endAt,
 } from "../database/node_modules/firebase/firestore";
+import { colRef } from "../database/src/db";
+import Header from "../components/header";
+import Grid from "../components/grid";
+import { useLocation, Link } from "react-router-dom";
 
 const Browse = () => {
   const location = useLocation();

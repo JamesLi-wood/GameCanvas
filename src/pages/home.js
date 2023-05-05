@@ -1,8 +1,8 @@
 import "../stylesheet/home.css";
-import Header from "../components/header.js";
-import Grid from "../components/grid.js";
 import { colRef } from "../database/src/db";
 import { query, limit } from "../database/node_modules/firebase/firestore";
+import Header from "../components/header.js";
+import Grid from "../components/grid.js";
 
 function Home() {
   const q = query(colRef, limit(24));

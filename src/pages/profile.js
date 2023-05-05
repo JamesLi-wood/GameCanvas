@@ -1,9 +1,9 @@
 import "../stylesheet/profile.css";
 import "../stylesheet/home.css";
 import Header from "../components/header";
+import ChangeCreds from "../components/changeCreds";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ChangeCreds from "../components/changeCreds";
 
 const Profile = () => {
   const [option, setOption] = useState();

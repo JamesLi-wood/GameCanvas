@@ -1,10 +1,10 @@
 import "../stylesheet/home.css";
 import "../stylesheet/browse.css";
-import Header from "../components/header";
-import { useLocation } from "react-router-dom";
 import { query, where } from "../database/node_modules/firebase/firestore";
 import { colRef } from "../database/src/db";
+import Header from "../components/header";
 import Grid from "../components/grid";
+import { useLocation } from "react-router-dom";
 
 const Genre = () => {
   const location = useLocation();

@@ -1,15 +1,15 @@
+import "../stylesheet/profile.css";
+import "../stylesheet/grid.css";
+import "../stylesheet/home.css";
 import {
   getDoc,
   onSnapshot,
   doc,
 } from "../database/node_modules/firebase/firestore";
 import { db, colRef } from "../database/src/db";
+import Header from "../components/header";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/header";
-import "../stylesheet/profile.css";
-import "../stylesheet/grid.css";
-import "../stylesheet/home.css";
 
 const ProfileList = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));

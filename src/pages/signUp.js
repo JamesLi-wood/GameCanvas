@@ -1,12 +1,12 @@
 import "../stylesheet/login.css";
-import { setUser } from "./App";
-import { userRef } from "../database/src/db";
 import {
   where,
   query,
   getDocs,
   addDoc,
 } from "../database/node_modules/firebase/firestore";
+import { userRef } from "../database/src/db";
+import { setUser } from "./App";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
