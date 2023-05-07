@@ -61,7 +61,7 @@ const Login = () => {
           />
           {error && (
             <div className="error">
-              Username and Password do not match. <br></br>
+              Credentials do not match. <br></br>
               Please try again.
             </div>
           )}
