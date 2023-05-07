@@ -2,6 +2,7 @@ import "../stylesheet/grid.css";
 import { onSnapshot } from "../database/node_modules/firebase/firestore";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Pagination from "./pagination";
 
 const Grid = ({ colRef }) => {
   const [arr, setArr] = useState([]);
@@ -18,25 +19,42 @@ const Grid = ({ colRef }) => {
     }, 500);
   }, []);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [contentPerPage] = useState(2); // change to 24 later
+  const indexOfLastPost = currentPage * contentPerPage;
+  const indexOfFirstPost = indexOfLastPost - contentPerPage;
+  const currentPost = arr.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <>
       {arr.length > 0 ? (
-        <div className="grid">
-          {arr.map((doc) => {
-            return (
-              <div className="game-card" key={doc.title}>
-                <Link to="/gameInfo" state={doc.title}>
-                  <img
-                    src={require(`../images/${doc.imgLink}`)}
-                    className="game-image"
-                    alt={doc.title}
-                  />
-                </Link>
-                <div className="game-title">{doc.title}</div>
-              </div>
-            );
-          })}
-        </div>
+        <>
+          <div className="grid">
+            {currentPost.map((doc) => {
+              return (
+                <div className="game-card" key={doc.title}>
+                  <Link to="/gameInfo" state={doc.title}>
+                    <img
+                      src={require(`../images/${doc.imgLink}`)}
+                      className="game-image"
+                      alt={doc.title}
+                    />
+                  </Link>
+                  <div className="game-title">{doc.title}</div>
+                </div>
+              );
+            })}
+          </div>
+          <Pagination
+            contentPerPage={contentPerPage}
+            totalPost={arr.length}
+            paginate={paginate}
+          />
+        </>
       ) : (
         <div>
           {isPending && <div className="loading">Loading...</div>}
