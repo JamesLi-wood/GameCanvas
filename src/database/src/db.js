@@ -1,26 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  onSnapshot,
-  getDocs,
-  addDoc,
-  deleteDoc,
-  doc,
-  query,
-  where,
-  orderBy,
-  serverTimestamp,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signOut,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { getFirestore, collection } from "firebase/firestore";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -37,10 +16,9 @@ initializeApp(firebaseConfig);
 
 // init services
 const db = getFirestore();
-const auth = getAuth();
 
 // collection ref
-const colRef = collection(db, "Games");
+const gameRef = collection(db, "Games");
 const userRef = collection(db, "Users");
 
-export { db, auth, colRef, userRef };
+export { db, gameRef, userRef };
