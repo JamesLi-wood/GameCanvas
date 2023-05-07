@@ -33,26 +33,27 @@ const Browse = () => {
           </>
         ) : (
           <ul>
+            <div className="genre-title">Genres</div>
             <Link to="/genre" state="Action">
-              <div className="genre">Action</div>
+              <button className="genre-box">Action</button>
             </Link>
             <Link to="/genre" state="RPG">
-              <div className="genre">RPG</div>
+              <button className="genre-box">RPG</button>
             </Link>
             <Link to="/genre" state="MOBA">
-              <div className="genre">MOBA</div>
+              <button className="genre-box">MOBA</button>
             </Link>
             <Link to="/genre" state="FPS">
-              <div className="genre">FPS</div>
+              <button className="genre-box">FPS</button>
             </Link>
             <Link to="/genre" state="Tactical Shooter">
-              <div className="genre">Tactical Shooter</div>
+              <button className="genre-box">Tactical Shooter</button>
             </Link>
             <Link to="/genre" state="Strategy">
-              <div className="genre">Strategy</div>
+              <button className="genre-box">Strategy</button>
             </Link>
             <Link to="/genre" state="Adventure">
-              <div className="genre">Adventure</div>
+              <button className="genre-box">Adventure</button>
             </Link>
           </ul>
         )}
