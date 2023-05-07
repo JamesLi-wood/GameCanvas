@@ -1,5 +1,6 @@
 .login-body {
   background-color: rgb(225, 225, 225);
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   position: fixed;

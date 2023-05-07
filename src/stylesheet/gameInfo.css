@@ -1,8 +1,14 @@
-.info-card {
-  margin-top: 100px;
+.gameInfo-container {
   width: 1050px;
+  margin-top: 100px;
+}
+
+.info-card {
+  background-color: rgb(102, 91, 255);
+  border: 1px solid white;
+  border-bottom: none;
   display: grid;
-  grid-template-columns: 300px 750px;
+  grid-template-columns: 300px 1fr;
 }
 
 .image {
@@ -22,6 +28,7 @@
   font-size: 25px;
   font-weight: bold;
   text-align: center;
+  margin-top: 20px;
 }
 
 .data {
@@ -30,14 +37,16 @@
 }
 
 .fill-card {
-  width: 1050px;
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(102, 91, 255);
+  border: 1px solid white;
+  border-top: none;
 }
 
 .strong {
   color: white;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -45,17 +54,21 @@
   color: white;
   font-size: 18px;
   line-height: 25px;
+  margin: 10px 0px 10px 0px;
 }
 
 .genre-box {
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(102, 91, 255);
   border: 1px solid white;
   color: white;
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px 10px 15px;
-  margin-right: 7px;
-  margin-bottom: 7px;
+  margin: 0px 7px 7px 0px;
+}
+
+.genre-box:hover {
+  background-color: rgb(73, 65, 185);
 }
 
 .star-container {

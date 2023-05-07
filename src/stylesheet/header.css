@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(87, 87, 177);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -12,14 +12,13 @@
 }
 
 .left-side {
-  min-width: 250px;
-  width: 30%;
-  border: 1px solid blue;
   text-align: center;
+  width: 30%;
+  min-width: 250px;
 }
 
 .button {
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(87, 87, 177);
   border: 1px solid white;
   color: white;
   cursor: pointer;
@@ -27,11 +26,14 @@
   margin-right: 20px;
 }
 
+.button:hover {
+  background-color: rgb(64, 64, 131);
+}
+
 .middle-side {
-  min-width: 350px;
-  width: 40%;
-  border: 1px solid yellow;
   text-align: center;
+  width: 40%;
+  min-width: 350px;
 }
 
 .middle-side input {
@@ -61,28 +63,6 @@
 }
 
 .right-side {
-  min-width: 200px;
   width: 30%;
-  border: 1px solid red;
-}
-
-.logOut {
-  background-color: black;
-  border: 1px solid white;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  height: 30px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.logOut:active {
-  background-color: black;
-  border: 1px solid white;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  height: 30px;
-  opacity: 1;
+  min-width: 200px;
 }
