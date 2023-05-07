@@ -41,15 +41,15 @@ const GameInfo = () => {
     });
   }
 
-  function handleClick(e, option) {
+  function handleClick(_e, option) {
     if (!user.loggedIn) {
       navigate("/login");
     } else {
-      if (option == "check") {
+      if (option === "check") {
         currentLikes.push(game.title);
         game.favorites++;
       } else {
-        currentLikes = currentLikes.filter((title) => title != game.title);
+        currentLikes = currentLikes.filter((title) => title !== game.title);
         game.favorites--;
       }
 
@@ -65,11 +65,23 @@ const GameInfo = () => {
     }
   }
 
+  let platforms;
+  if (game) {
+    if (game.platforms.length === 1) {
+      platforms = `${game.platforms}`;
+    } else {
+      const formattedPlatforms = game.platforms.slice(0, -1).join(", ");
+      platforms = `${formattedPlatforms} and ${
+        game.platforms[game.platforms.length - 1]
+      }.`;
+    }
+  }
+
   return (
     <div className="center-body">
       <Header />
       {game ? (
-        <div>
+        <div className="gameInfo-container">
           <div className="info-card">
             <img
               className="image"
@@ -78,7 +90,6 @@ const GameInfo = () => {
             />
             <div className="information">
               <div className="title">{game.title}</div>
-
               <div className="star-container">
                 <div>
                   <div className="favorite-count">{game.favorites}</div>
@@ -101,15 +112,24 @@ const GameInfo = () => {
                   )}
                 </div>
               </div>
-              <div className="data">Developer: {game.developer}</div>
-              <div className="data">Publisher: {game.publisher}</div>
-              <div className="data">Release Date: {game.releaseDate}</div>
-              <div className="data">Age rating: {game.rating}</div>
               <div className="data">
-                Platforms:{" "}
-                {game.platforms.map((platform) => {
-                  return `${platform}, `;
-                })}
+                <strong>Developer: </strong> {game.developer}
+              </div>
+              <div className="data">
+                <strong>Publisher: </strong>
+                {game.publisher}
+              </div>
+              <div className="data">
+                <strong>Release Date: </strong>
+                {game.releaseDate}
+              </div>
+              <div className="data">
+                <strong>Age rating: </strong>
+                {game.rating}
+              </div>
+              <div className="data">
+                <strong>Platforms: </strong>
+                {platforms}
               </div>
             </div>
           </div>
@@ -119,10 +139,8 @@ const GameInfo = () => {
             <div className="strong">Genre:</div>
             {game.genres.map((genre) => {
               return (
-                <Link to="/genre" state={genre}>
-                  <button className="genre-box" key={genre}>
-                    {genre}
-                  </button>
+                <Link to="/genre" state={genre} key={genre}>
+                  <button className="genre-box">{genre}</button>
                 </Link>
               );
             })}
