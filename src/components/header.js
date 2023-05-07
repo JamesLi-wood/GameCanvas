@@ -68,7 +68,7 @@ const Header = () => {
               <button className="button" id="user" onClick={activateLogOut}>
                 {user.username}
               </button>
-              <button className="logOut" id="logOut" onClick={logOut}>
+              <button className="button" id="logOut" onClick={logOut}>
                 Log out
               </button>
             </div>
