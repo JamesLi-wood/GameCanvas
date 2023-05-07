@@ -1,7 +1,7 @@
 import "../stylesheet/home.css";
 import "../stylesheet/browse.css";
 import { query, where } from "../database/node_modules/firebase/firestore";
-import { colRef } from "../database/src/db";
+import { gameRef } from "../database/src/db";
 import Header from "../components/header";
 import Grid from "../components/grid";
 import { useLocation } from "react-router-dom";
@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 const Genre = () => {
   const location = useLocation();
   const genre = location.state;
-  const q = query(colRef, where("genres", "array-contains", genre));
+  const q = query(gameRef, where("genres", "array-contains", genre));
 
   return (
     <div className="center-body">

@@ -1,11 +1,11 @@
 import "../stylesheet/home.css";
-import { colRef } from "../database/src/db";
+import { gameRef } from "../database/src/db";
 import { query, limit } from "../database/node_modules/firebase/firestore";
 import Header from "../components/header.js";
 import Grid from "../components/grid.js";
 
 function Home() {
-  const q = query(colRef, limit(24));
+  const q = query(gameRef, limit(24));
 
   return (
     <div className="center-body">

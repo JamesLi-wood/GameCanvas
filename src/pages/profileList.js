@@ -6,7 +6,7 @@ import {
   onSnapshot,
   doc,
 } from "../database/node_modules/firebase/firestore";
-import { db, colRef } from "../database/src/db";
+import { db, gameRef } from "../database/src/db";
 import Header from "../components/header";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const ProfileList = () => {
 
   useEffect(() => {
     getDoc(docRef).then((data) => {
-      onSnapshot(colRef, (snapshot) => {
+      onSnapshot(gameRef, (snapshot) => {
         setArr(
           snapshot.docs.map((doc) => {
             if (data.data().likes.includes(doc.id)) {
