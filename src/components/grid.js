@@ -53,6 +53,7 @@ const Grid = ({ colRef }) => {
             contentPerPage={contentPerPage}
             totalPost={arr.length}
             paginate={paginate}
+            currentPage={currentPage}
           />
         </>
       ) : (
