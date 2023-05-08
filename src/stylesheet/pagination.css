@@ -1,5 +1,4 @@
 .pagination {
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -8,9 +7,33 @@
 }
 
 .page-link {
-  background-color: pink;
-  display: inline;
+  background-color: rgb(102, 91, 255);
   border: 1px solid white;
+  box-sizing: border-box;
+  color: white;
   cursor: pointer;
-  margin: 0px 5px 0px 5px;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+  margin: 0px 7px 0px 7px;
+  height: 35px;
+  width: 35px;
+}
+
+.page-link:hover {
+  background-color: rgb(73, 65, 185);
+}
+
+.page-link::placeholder {
+  color: white;
+}
+
+.page-link::-webkit-outer-spin-button,
+.page-link::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form {
+  display: inline;
 }
