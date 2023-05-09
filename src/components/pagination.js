@@ -32,7 +32,8 @@ const Pagination = ({ contentPerPage, totalPost, paginate, currentPage }) => {
     });
   });
 
-  const navigate = () => {
+  const navigate = (e) => {
+    e.preventDefault();
     const value = document.getElementById("input").value;
     if (value >= 1 && value <= end) {
       paginate(value);
