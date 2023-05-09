@@ -20,7 +20,7 @@ const Grid = ({ colRef }) => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [contentPerPage] = useState(2); // change to 24 later
+  const [contentPerPage] = useState(24);
   const indexOfLastPost = currentPage * contentPerPage;
   const indexOfFirstPost = indexOfLastPost - contentPerPage;
   const currentPost = arr.slice(indexOfFirstPost, indexOfLastPost);
