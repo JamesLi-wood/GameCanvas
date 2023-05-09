@@ -1,17 +1,35 @@
 {
   "files": {
-    "main.css": "/GameCanvas/static/css/main.68adfcfd.css",
-    "main.js": "/GameCanvas/static/js/main.749a2d6b.js",
+    "main.css": "/GameCanvas/static/css/main.26099faa.css",
+    "main.js": "/GameCanvas/static/js/main.68731e9e.js",
+    "static/media/lostArk.jpg": "/GameCanvas/static/media/lostArk.40a2903af30cea98942a.jpg",
     "static/media/DBZ_Kakarot.png": "/GameCanvas/static/media/DBZ_Kakarot.0724f24327d4df81d6f3.png",
+    "static/media/apexLegends.jpg": "/GameCanvas/static/media/apexLegends.33c345ec1f2f6115014e.jpg",
+    "static/media/fallGuys.jpg": "/GameCanvas/static/media/fallGuys.a1d88f2f28289c3db532.jpg",
+    "static/media/terraria.jpg": "/GameCanvas/static/media/terraria.0f9d44026dc6884bc847.jpg",
+    "static/media/rotmg.jpg": "/GameCanvas/static/media/rotmg.8a9c8d2333de17f0ca1b.jpg",
+    "static/media/stardewValley.jpg": "/GameCanvas/static/media/stardewValley.c30f33e9d8a31d1d2131.jpg",
+    "static/media/itTakesTwo.jpg": "/GameCanvas/static/media/itTakesTwo.bcdbe1cc769113c77bae.jpg",
+    "static/media/smite.jpg": "/GameCanvas/static/media/smite.8bec4607ad7f8168d254.jpg",
+    "static/media/fortnite.png": "/GameCanvas/static/media/fortnite.9a78ad9ee1815e3e1851.png",
+    "static/media/overwatch2.png": "/GameCanvas/static/media/overwatch2.d494b7dcf6a99b0df0bc.png",
+    "static/media/hogwartsLegacy.jpg": "/GameCanvas/static/media/hogwartsLegacy.ddfeb40b540d2ce81edc.jpg",
+    "static/media/sekiro.jpg": "/GameCanvas/static/media/sekiro.0ce736d20dfd8f8fe882.jpg",
+    "static/media/amongUs.jpg": "/GameCanvas/static/media/amongUs.de3eebe07577116f21d0.jpg",
     "static/media/leagueOfLegends.jpg": "/GameCanvas/static/media/leagueOfLegends.e67572fac6f59a33613f.jpg",
+    "static/media/cyberpunk2077.jpg": "/GameCanvas/static/media/cyberpunk2077.83d68c4757bbffcf6456.jpg",
+    "static/media/eldenRing.jpg": "/GameCanvas/static/media/eldenRing.dba56d13e69a25f62925.jpg",
+    "static/media/overwatch.jpg": "/GameCanvas/static/media/overwatch.27312f5689053efca4ca.jpg",
     "static/media/GTA5.jpg": "/GameCanvas/static/media/GTA5.49d4d9d8784d4e57d541.jpg",
+    "static/media/brawlhalla.jpg": "/GameCanvas/static/media/brawlhalla.ad4c0d12b61e8cad943d.jpg",
     "static/media/magnifying-glass.png": "/GameCanvas/static/media/magnifying-glass.d192b5908e51e25242d9.png",
+    "static/media/minecraft.jpg": "/GameCanvas/static/media/minecraft.fed23fa6c948cb9d5014.jpg",
     "index.html": "/GameCanvas/index.html",
-    "main.68adfcfd.css.map": "/GameCanvas/static/css/main.68adfcfd.css.map",
-    "main.749a2d6b.js.map": "/GameCanvas/static/js/main.749a2d6b.js.map"
+    "main.26099faa.css.map": "/GameCanvas/static/css/main.26099faa.css.map",
+    "main.68731e9e.js.map": "/GameCanvas/static/js/main.68731e9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.68adfcfd.css",
-    "static/js/main.749a2d6b.js"
+    "static/css/main.26099faa.css",
+    "static/js/main.68731e9e.js"
   ]
 }
