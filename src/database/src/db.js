@@ -20,5 +20,6 @@ const db = getFirestore();
 // collection ref
 const gameRef = collection(db, "Games");
 const userRef = collection(db, "Users");
+const genreRef = collection(db, "Genres");
 
-export { db, gameRef, userRef };
+export { db, gameRef, userRef, genreRef };
