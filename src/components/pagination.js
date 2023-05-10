@@ -1,17 +1,25 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../stylesheet/pagination.css";
 
 const Pagination = ({ contentPerPage, totalPost, paginate, currentPage }) => {
+  const [pageNumbers, setPageNumbers] = useState([]);
+  const [fill, setFill] = useState(false);
   const end = Math.ceil(totalPost / contentPerPage);
-  let pageNumbers = [];
 
-  if (end <= 5) {
-    for (let i = 1; i <= end; i++) {
-      pageNumbers.push(i);
+  useEffect(() => {
+    let arr = [];
+    if (end <= 5) {
+      for (let i = 1; i <= end; i++) {
+        arr.push(i);
+        setPageNumbers(arr);
+        setFill(false);
+      }
+    } else {
+      arr = [1, 2, 3, 4, 5, 6];
+      setPageNumbers(arr);
+      setFill(true);
     }
-  } else {
-    pageNumbers = [1, 2, 3, 4, 5, 6];
-  }
+  });
 
   const backward = () => {
     if (currentPage != 1) {
@@ -26,10 +34,12 @@ const Pagination = ({ contentPerPage, totalPost, paginate, currentPage }) => {
   };
 
   useEffect(() => {
-    const input = document.getElementById("input");
-    input.addEventListener("focus", () => {
-      input.value = "";
-    });
+    if (fill) {
+      const input = document.getElementById("input");
+      input.addEventListener("focus", () => {
+        input.value = "";
+      });
+    }
   });
 
   const navigate = (e) => {
@@ -62,17 +72,19 @@ const Pagination = ({ contentPerPage, totalPost, paginate, currentPage }) => {
             </li>
           );
         })}
-        <li className="page-item">
-          <form onSubmit={navigate}>
-            <input
-              id="input"
-              className="page-link"
-              type="number"
-              placeholder="..."
-              autoComplete="off"
-            />
-          </form>
-        </li>
+        {fill && (
+          <li className="page-item">
+            <form onSubmit={navigate}>
+              <input
+                id="input"
+                className="page-link"
+                type="number"
+                placeholder="..."
+                autoComplete="off"
+              />
+            </form>
+          </li>
+        )}
         <li className="page-item">
           <button
             className="page-link"
