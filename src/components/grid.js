@@ -8,6 +8,11 @@ const Grid = ({ colRef }) => {
   const [arr, setArr] = useState([]);
   const [isPending, setIsPending] = useState(true);
   const [result, setResult] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [contentPerPage] = useState(12);
+  const indexOfLastPost = currentPage * contentPerPage;
+  const indexOfFirstPost = indexOfLastPost - contentPerPage;
+  const currentPost = arr.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,12 +23,6 @@ const Grid = ({ colRef }) => {
       setIsPending(false);
     }, 500);
   }, []);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [contentPerPage] = useState(24);
-  const indexOfLastPost = currentPage * contentPerPage;
-  const indexOfFirstPost = indexOfLastPost - contentPerPage;
-  const currentPost = arr.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
