@@ -1,14 +1,17 @@
 import "../stylesheet/home.css";
 import { gameRef } from "../database/src/db";
+import { query, orderBy } from "../database/node_modules/firebase/firestore";
 import Header from "../components/header.js";
 import Grid from "../components/grid.js";
 
 function Home() {
+  const q = query(gameRef, orderBy("favorites", "desc"));
+  
   return (
     <div className="center-body">
       <Header />
       <div className="home-card">
-        <Grid colRef={gameRef} />
+        <Grid colRef={q} />
       </div>
     </div>
   );
