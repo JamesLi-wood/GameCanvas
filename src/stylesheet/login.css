@@ -46,11 +46,26 @@
   width: 100%;
 }
 
+.password-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.password-checkbox input {
+  height: 15px;
+  width: 15px;
+}
+
+.password-checkbox div {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 .error {
   color: red;
   text-align: center;
   margin-top: 15px;
-  margin-bottom: -15px;
 }
 
 .login-button {
@@ -61,8 +76,8 @@
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   height: 40px;
   width: 100%;
 }
@@ -74,4 +89,9 @@
 
 .signUp {
   text-align: center;
+}
+
+.signUp div {
+  display: inline-block;
+  text-indent: 5px;
 }
