@@ -19,7 +19,7 @@ const Pagination = ({ contentPerPage, totalPost, paginate, currentPage }) => {
       setPageNumbers(arr);
       setFill(true);
     }
-  });
+  }, []);
 
   const backward = () => {
     if (currentPage != 1) {
