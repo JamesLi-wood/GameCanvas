@@ -40,6 +40,15 @@ const SignUp = () => {
     });
   };
 
+  function showPassword() {
+    const input = document.getElementById("password");
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  }
+
   return (
     <div className="login-body">
       <div className="login-card">
@@ -57,12 +66,17 @@ const SignUp = () => {
           />
           <div className="name">Enter your Password:</div>
           <input
+            id="password"
             className="input"
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <div className="password-checkbox">
+            <input onClick={showPassword} type="checkbox"></input>
+            <div>Show password</div>
+          </div>
           {error && (
             <div className="error">
               Username already exists. <br></br>
@@ -73,7 +87,9 @@ const SignUp = () => {
         </form>
         <div className="signUp">
           Already have an account?
-          <Link to="/Login">Log In!</Link>
+          <Link to="/Login">
+            <div>Log In!</div>
+          </Link>
         </div>
       </div>
     </div>
