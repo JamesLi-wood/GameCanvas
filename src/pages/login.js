@@ -37,6 +37,15 @@ const Login = () => {
     });
   };
 
+  function showPassword() {
+    const input = document.getElementById("password");
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  }
+
   return (
     <div className="login-body">
       <div className="login-card">
@@ -53,12 +62,17 @@ const Login = () => {
             required
           />
           <input
+            id="password"
             className="input"
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <div className="password-checkbox">
+            <input onClick={showPassword} type="checkbox"></input>
+            <div>Show password</div>
+          </div>
           {error && (
             <div className="error">
               Credentials do not match. <br></br>
@@ -71,7 +85,9 @@ const Login = () => {
         </form>
         <div className="signUp">
           Don't have an account?
-          <Link to="/signUp">Sign Up!</Link>
+          <Link to="/signUp">
+            <div>Sign Up!</div>
+          </Link>
         </div>
       </div>
     </div>
