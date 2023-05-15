@@ -45,7 +45,7 @@ const Browse = () => {
             <div className="genre-title">Genres</div>
             {genres.map((genre) => {
               return (
-                <Link to="/genre" state={genre}>
+                <Link to="/genre" state={genre} key={genre}>
                   <button className="genre-box">{genre}</button>
                 </Link>
               );
