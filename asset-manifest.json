@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GameCanvas/static/css/main.1f946107.css",
-    "main.js": "/GameCanvas/static/js/main.a7c7f84b.js",
+    "main.js": "/GameCanvas/static/js/main.e21eae5d.js",
     "static/media/lostArk.jpg": "/GameCanvas/static/media/lostArk.40a2903af30cea98942a.jpg",
     "static/media/DBZ_Kakarot.png": "/GameCanvas/static/media/DBZ_Kakarot.0724f24327d4df81d6f3.png",
     "static/media/subnautica.jpg": "/GameCanvas/static/media/subnautica.579c13fa76530e893ec3.jpg",
@@ -12,7 +12,9 @@
     "static/media/farCry2.jpg": "/GameCanvas/static/media/farCry2.b73a93c35970d7937018.jpg",
     "static/media/fallGuys.jpg": "/GameCanvas/static/media/fallGuys.a1d88f2f28289c3db532.jpg",
     "static/media/enterTheGungeon.jpg": "/GameCanvas/static/media/enterTheGungeon.e1c2b2fa594afb9e94e7.jpg",
+    "static/media/yugiohMasterDuel.jpg": "/GameCanvas/static/media/yugiohMasterDuel.f032e8b282342bd3590d.jpg",
     "static/media/farCryNewDawn.jpg": "/GameCanvas/static/media/farCryNewDawn.51cf7ca243e065707fac.jpg",
+    "static/media/yugiohDuelLinks.jpg": "/GameCanvas/static/media/yugiohDuelLinks.da9c50cb69607b2cf982.jpg",
     "static/media/subnauticaBelowZero.jpg": "/GameCanvas/static/media/subnauticaBelowZero.13bcd95609ed0c015d22.jpg",
     "static/media/terraria.jpg": "/GameCanvas/static/media/terraria.0f9d44026dc6884bc847.jpg",
     "static/media/rotmg.jpg": "/GameCanvas/static/media/rotmg.8a9c8d2333de17f0ca1b.jpg",
@@ -37,6 +39,7 @@
     "static/media/portal2.jpg": "/GameCanvas/static/media/portal2.4ff277129b36d8e4deaa.jpg",
     "static/media/assassinsCreedValhalla.jpg": "/GameCanvas/static/media/assassinsCreedValhalla.1e8e019ba1ce630761f2.jpg",
     "static/media/darkSouls3.jpg": "/GameCanvas/static/media/darkSouls3.e64ba182f0304baa134c.jpg",
+    "static/media/callOfDutyWarzone2.jpg": "/GameCanvas/static/media/callOfDutyWarzone2.d4560edd4d432bf841f9.jpg",
     "static/media/fortnite.png": "/GameCanvas/static/media/fortnite.9a78ad9ee1815e3e1851.png",
     "static/media/overwatch2.png": "/GameCanvas/static/media/overwatch2.d494b7dcf6a99b0df0bc.png",
     "static/media/assassinsCreedBrotherhood.jpg": "/GameCanvas/static/media/assassinsCreedBrotherhood.70d61d62f9a68f643a6a.jpg",
@@ -45,6 +48,7 @@
     "static/media/sekiro.jpg": "/GameCanvas/static/media/sekiro.0ce736d20dfd8f8fe882.jpg",
     "static/media/amongUs.jpg": "/GameCanvas/static/media/amongUs.de3eebe07577116f21d0.jpg",
     "static/media/callOfDutyModernWarfare2.jpg": "/GameCanvas/static/media/callOfDutyModernWarfare2.5d815f4cb88b065451aa.jpg",
+    "static/media/pubgBattlegrounds.jpg": "/GameCanvas/static/media/pubgBattlegrounds.707d0b0c23913a6deabf.jpg",
     "static/media/godOfWar.jpg": "/GameCanvas/static/media/godOfWar.22499d33f903ca36fb16.jpg",
     "static/media/farCry3.jpg": "/GameCanvas/static/media/farCry3.fc8bbf732d2cc7d5c7ca.jpg",
     "static/media/leagueOfLegends.jpg": "/GameCanvas/static/media/leagueOfLegends.e67572fac6f59a33613f.jpg",
@@ -70,10 +74,10 @@
     "static/media/godOfWarRagnarok.jpg": "/GameCanvas/static/media/godOfWarRagnarok.f676b35f156be66cd853.jpg",
     "index.html": "/GameCanvas/index.html",
     "main.1f946107.css.map": "/GameCanvas/static/css/main.1f946107.css.map",
-    "main.a7c7f84b.js.map": "/GameCanvas/static/js/main.a7c7f84b.js.map"
+    "main.e21eae5d.js.map": "/GameCanvas/static/js/main.e21eae5d.js.map"
   },
   "entrypoints": [
     "static/css/main.1f946107.css",
-    "static/js/main.a7c7f84b.js"
+    "static/js/main.e21eae5d.js"
   ]
 }
