@@ -21,6 +21,7 @@ const ChangeCreds = ({ option, user }) => {
   const navigate = useNavigate();
   const docRef = doc(userRef, user);
 
+  // checks what the option is and modifies the useState in respect to the option
   useEffect(() => {
     if (option == "delete") {
       setErase(true);
@@ -29,6 +30,7 @@ const ChangeCreds = ({ option, user }) => {
     }
   });
 
+  // using the option type, alters the user's username or password
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -55,6 +57,7 @@ const ChangeCreds = ({ option, user }) => {
     }
   };
 
+  // deletes the user's account
   function deleteAccount() {
     deleteDoc(docRef).then(() => {
       setUser(false, "", null);

@@ -3,6 +3,7 @@ import { setUser } from "../pages/App";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+// opens the log-out button
 function activateLogOut() {
   const active = document.getElementById("user").classList.toggle("active");
   let logOut = document.getElementById("logOut");
@@ -21,11 +22,13 @@ const Header = () => {
   const [input, setInput] = useState("null");
   const navigate = useNavigate();
 
+  // logs the user out
   function logOut() {
     setUser(false, "", null);
     navigate("/home");
   }
 
+  // navigate to the browse route with the input as its state
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/browse", { state: input });

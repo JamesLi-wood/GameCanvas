@@ -14,6 +14,7 @@ const Grid = ({ colRef }) => {
   const indexOfFirstPost = indexOfLastPost - contentPerPage;
   const currentPost = arr.slice(indexOfFirstPost, indexOfLastPost);
 
+  // gets all the games inside the collection reference
   useEffect(() => {
     setTimeout(() => {
       onSnapshot(colRef, (snapshot) => {
@@ -24,6 +25,7 @@ const Grid = ({ colRef }) => {
     }, 500);
   }, []);
 
+  // pass this over as a prop to the Pagination component
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
