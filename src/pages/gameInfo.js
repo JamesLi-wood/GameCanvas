@@ -20,6 +20,8 @@ const GameInfo = () => {
   let currentLikes;
   let docRef;
 
+  /* Gets the document reference from the Games collection
+     in firebase and retrieves the data within the document. */
   useEffect(() => {
     setTimeout(() => {
       const gameRef = doc(db, "Games", title);
@@ -29,6 +31,9 @@ const GameInfo = () => {
     }, 500);
   }, []);
 
+  /* If the user is logged in, it gets the document reference
+     of the user and checks for whether or not the game is 
+     favorited by the user. */
   if (user.loggedIn) {
     docRef = doc(db, "Users", user.data);
     getDoc(docRef).then((doc) => {
@@ -41,11 +46,20 @@ const GameInfo = () => {
     });
   }
 
-  function handleClick(_e, option) {
+  /* If the star is clicked, it will do 1 of 3 things:
+     1) Navigate the user to the login page if a user
+        isn't logged in.
+     2) If the add variable is true, it'll add the game
+        to the users favorite list and increment the
+        games favorite counter. 
+     3) If the add variable is false, it'll remove the
+        game from the users favorite list and decrement
+        the games favorite counter. */
+  function handleClick(_e, add) {
     if (!user.loggedIn) {
       navigate("/login");
     } else {
-      if (option === "check") {
+      if (add) {
         currentLikes.push(game.title);
         game.favorites++;
       } else {
@@ -65,6 +79,7 @@ const GameInfo = () => {
     }
   }
 
+  /* Lists out the games platforms */
   let platforms;
   if (game) {
     if (game.platforms.length === 1) {
@@ -97,7 +112,7 @@ const GameInfo = () => {
                     <div
                       id="star"
                       className="star-checked"
-                      onClick={(event) => handleClick(event, "uncheck")}
+                      onClick={(event) => handleClick(event, false)}
                     >
                       &#9733;
                     </div>
@@ -105,7 +120,7 @@ const GameInfo = () => {
                     <div
                       id="star"
                       className="star-unchecked"
-                      onClick={(event) => handleClick(event, "check")}
+                      onClick={(event) => handleClick(event, true)}
                     >
                       &#9734;
                     </div>

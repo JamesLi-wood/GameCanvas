@@ -16,6 +16,13 @@ const SignUp = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  /* When the user attempts to sign-up, it'll do 3 things:
+     1) Goes into the User collection in firebase and query
+        based on the entered username.
+     2) If the user does not exist in the User collection,
+        it'll create a new user with the provided information.
+     3) If the user does exist in the User collection, an error
+        message will appear. */
   const handleSubmit = (e) => {
     e.preventDefault();
     const q = query(userRef, where("username", "==", username));
@@ -40,6 +47,7 @@ const SignUp = () => {
     });
   };
 
+  // shows the password entered.
   function showPassword() {
     const input = document.getElementById("password");
     if (input.type === "password") {

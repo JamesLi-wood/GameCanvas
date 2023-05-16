@@ -11,12 +11,15 @@ const Profile = () => {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
 
+  // If the user isn't logged in, redirect the user to the login page
   useEffect(() => {
     if (!user.loggedIn) {
       navigate("/login");
     }
   });
 
+  /* Opens up the ChangeCreds component and passes the option as
+     as the prop */
   const handleSubmit = (e, option) => {
     e.preventDefault();
     const active = document.getElementById("change").classList.toggle("active");
@@ -55,6 +58,7 @@ const Profile = () => {
         </button>
         <button
           className="profile-button"
+          id="change"
           onClick={(event) => handleSubmit(event, "delete")}
         >
           Delete account

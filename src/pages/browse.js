@@ -18,6 +18,8 @@ const Browse = () => {
   const game = location.state;
   const [genres, setGenres] = useState([]);
 
+  /* Goes to the Games collection on firebase and
+     queries based on what was entered. */
   const q = query(
     gameRef,
     orderBy("alt"),
@@ -25,6 +27,7 @@ const Browse = () => {
     endAt(`${game}\uf8ff`)
   );
 
+  // Retrieves all the genres from firebases Genre collection.
   useEffect(() => {
     onSnapshot(genreRef, (snapshot) => {
       setGenres(snapshot.docs.map((doc) => doc.data().title));

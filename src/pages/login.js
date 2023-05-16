@@ -15,6 +15,14 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  /* When the user enters the login info, it'll do 3 things:
+     1) Goes into the User collection in firebase and query
+        based on the entered username and password
+     2) If the user does not exist in the User collection,
+        an error message will appear 
+     3) If the user does exist in the User collection, the
+        user's info will be set in a storage session and
+        navigates the user to the homepage. */
   const handleSubmit = (e) => {
     e.preventDefault();
     const q = query(
@@ -37,6 +45,7 @@ const Login = () => {
     });
   };
 
+  // shows the password entered.
   function showPassword() {
     const input = document.getElementById("password");
     if (input.type === "password") {
